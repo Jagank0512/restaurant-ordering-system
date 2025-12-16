@@ -1,6 +1,7 @@
 <?php
 session_start();
-require_once '../db_connect.php';
+require_once __DIR__ . '/../../db_connect.php';
+
 
 // If already logged in, redirect to dashboard
 if (isset($_SESSION['admin_id'])) {
@@ -54,3 +55,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     exit();
 }
 ?>
+
