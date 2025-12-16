@@ -1,6 +1,6 @@
 <?php
 try {
-    $databaseUrl = getenv("DATABASE_URL");
+    $databaseUrl = getenv("postgresql://restaurant_user:04aNRfs2pzNDB7LNe44EHr9h0imNGNz1@dpg-d50mjj6r433s73dd37t0-a/restaurant_db_vks8");
 
     if (!$databaseUrl) {
         die("Database configuration not found");
