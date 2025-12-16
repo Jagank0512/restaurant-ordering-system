@@ -1,7 +1,14 @@
 <?php
 session_start();
-require_once __DIR__ . '/../../db_connect.php';
 
+$dsn = "postgresql://restaurant_user:PASSWORD@dpg-d50mjj6r433s73dd37t0-a.render.com:5432/restaurant_db_vks8";
+
+try {
+    $pdo = new PDO($dsn);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("DB error");
+}
 
 // If already logged in, redirect to dashboard
 if (isset($_SESSION['admin_id'])) {
@@ -55,4 +62,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     exit();
 }
 ?>
+
 
